@@ -80,19 +80,23 @@ class _MyAppState extends State<MyApp> {
                   body: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                           Padding(
                             padding:  EdgeInsets.all(5.0),
                             child: Text("CNBC",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),
                           ),
+                         
                           Padding(
                             padding:  EdgeInsets.all(5.0),
                             child: Text("HEY, Jon",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.grey),),
                           ),
+                  
                           Padding(
                             padding:  EdgeInsets.all(5.0),
                             child: Text("Discover Latest News",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 45),),
                           ),
+                          
                         Padding(
                           padding:  EdgeInsets.all(8.0),
                           child: TextField(
@@ -163,6 +167,7 @@ class _MyAppState extends State<MyApp> {
                                 height: 95,
                                 width: 95,
                                 decoration: BoxDecoration(
+                                  
                                 image: DecorationImage(image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSok0XxFUKZa9STTTaQ9eyItwZYSIxst8bqCQ&usqp=CAU')),
                                
                                 ),

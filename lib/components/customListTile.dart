@@ -17,12 +17,13 @@ Widget customListTile(Article article, BuildContext context) {
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(5),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 1.0,
-              ),
-            ]),
+            // boxShadow: [
+            //   BoxShadow(
+            //     color: Colors.black12,
+            //     blurRadius: 1.0,
+            //   ),
+            // ]
+            ),
         child: ListTile(
           leading: SizedBox(
             child: Container(
