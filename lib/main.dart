@@ -1,3 +1,4 @@
+import 'package:NewsApp/circle.dart';
 import 'package:NewsApp/services/api_service.dart';
 import 'package:flutter/material.dart';
 import 'components/customListTile.dart';
@@ -39,6 +40,15 @@ class _MyAppState extends State<MyApp> {
     super.initState();
   }
 
+  final List topics = [
+    'Poilitcs',
+    'Sports',
+    'Games',
+    'Movies',
+    'Crime',
+    'Election',
+    'Technology',
+  ];
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -66,7 +76,6 @@ class _MyAppState extends State<MyApp> {
                           fontSize: 20),
                     ),
                     actions: <Widget>[
-                     
                       Switch(
                           value: switchValue,
                           onChanged: (val) {
@@ -82,23 +91,34 @@ class _MyAppState extends State<MyApp> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                          Padding(
-                            padding:  EdgeInsets.all(5.0),
-                            child: Text("CNBC",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25),),
-                          ),
-                         
-                          Padding(
-                            padding:  EdgeInsets.all(5.0),
-                            child: Text("HEY, Jon",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.grey),),
-                          ),
-                  
-                          Padding(
-                            padding:  EdgeInsets.all(5.0),
-                            child: Text("Discover Latest News",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 45),),
-                          ),
-                          
                         Padding(
-                          padding:  EdgeInsets.all(8.0),
+                          padding: EdgeInsets.all(5.0),
+                          child: Text(
+                            "CNBC",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 25),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5.0),
+                          child: Text(
+                            "HEY, Jon",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                                color: Colors.grey),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(5.0),
+                          child: Text(
+                            "Discover Latest News",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 45),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                           child: TextField(
                             decoration: InputDecoration(
                                 hintText: 'Search for news',
@@ -113,72 +133,33 @@ class _MyAppState extends State<MyApp> {
                                 )),
                           ),
                         ),
-                        SizedBox(height: 10,),
-                        Row(
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Column(
                           children: [
-                            Padding(
-                              padding:  EdgeInsets.all(5.0),
-                              child: Container(
-                                height: 95,
-                                width: 95,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                image: DecorationImage(
-                                  image: NetworkImage('https://static.thenounproject.com/png/1742420-200.png')
-                                ),
-                                              boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 1.0,
-              ),
-            ]
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.all(5.0),
-                              child: Container(
-                                height: 95,
-                                width: 95,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                 image: DecorationImage(
-                                  image: NetworkImage('https://cdn-icons-png.flaticon.com/512/1533/1533887.png')
-                                 ),
-               
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.all(5.0),
-                              child: Container(
-                                height: 95,
-                                width: 95,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                 image: DecorationImage(image: NetworkImage('https://i.pinimg.com/736x/aa/f7/05/aaf705e06726ce3881288ae4be3ac5fe.jpg')),
-                      
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:  EdgeInsets.all(5.0),
-                              child: Container(
-                                height: 95,
-                                width: 95,
-                                decoration: BoxDecoration(
-                                  
-                                image: DecorationImage(image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSok0XxFUKZa9STTTaQ9eyItwZYSIxst8bqCQ&usqp=CAU')),
-                               
-                                ),
-                              ),
-                            ),
+                            Container(
+                              height: 120,
+                              child: ListView.builder(
+                                  itemCount: topics.length,
+                                  scrollDirection: Axis.horizontal,
+                                  itemBuilder: ((context, index) {
+                                    return Mycircle(
+                                      child: topics[index],
+                                    );
+                                    
+                                  })),
+                            )
                           ],
                         ),
-             Padding(
-               padding:  EdgeInsets.all(8.0),
-               child: Text('Breaking News',style: TextStyle(fontSize: 25,fontWeight: FontWeight.bold),),
-             ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'Breaking News',
+                            style: TextStyle(
+                                fontSize: 25, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                         FutureBuilder(
                           future: client.getArticle(),
                           builder: (BuildContext context,

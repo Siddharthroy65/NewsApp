@@ -79,7 +79,7 @@ class ArticlePage extends StatelessWidget {
           ),
                       Text(
                         'CNBC Media Channel',
-                        style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                      
                     ],
@@ -87,6 +87,7 @@ class ArticlePage extends StatelessWidget {
                
                 ],
               ),
+              
             ),
             Container(
               padding: EdgeInsets.all(6.0),
@@ -95,14 +96,14 @@ class ArticlePage extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.black,
-                    fontSize: 35),
+                    fontSize: 30),
               ),
             ),
             Text(
               article.description,
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 25.0,
+                  fontSize: 20.0,
                   color: Colors.black54),
             ),
             SizedBox(
