@@ -43,12 +43,19 @@ class _MyAppState extends State<MyApp> {
   final List topics = [
     'Poilitcs',
     'Sports',
-    'Games',
     'Movies',
     'Crime',
-    'Election',
-    'Technology',
+    'Tech',
+   
   ];
+  final Map image_topic_map = {
+    'Poilitcs': 'https://png.pngtree.com/png-vector/20190806/ourlarge/pngtree-politics-law-campaign-vote-blue-and-red-download-and-buy-png-image_1652004.jpg',
+    'Sports':   'https://arbaminch.gov.et/sites/default/files/images/office/football.jpg',
+    'Movies': 'https://t3.ftcdn.net/jpg/04/68/46/32/360_F_468463244_maWHdLG3652zOERm90PJmilPpXZaf7uv.jpg',
+    'Crime': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT96ukZOayo6eCJKmCK32_R3LkwXbdAv5KtYQ&usqp=CAU',
+    'Tech': 'https://media.istockphoto.com/vectors/case-studies-icon-vector-illustration-on-white-background-vector-id1304219432?k=20&m=1304219432&s=612x612&w=0&h=ifX5GzdkLtmJ16wR0VLDm_l-w2_yNJiJqlmwQ4L23d8=',
+   
+  };
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -102,10 +109,10 @@ class _MyAppState extends State<MyApp> {
                         Padding(
                           padding: EdgeInsets.all(5.0),
                           child: Text(
-                            "HEY, Jon",
+                            "Hey, Jon!",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 25,
+                                fontSize: 20,
                                 color: Colors.grey),
                           ),
                         ),
@@ -145,7 +152,10 @@ class _MyAppState extends State<MyApp> {
                                   scrollDirection: Axis.horizontal,
                                   itemBuilder: ((context, index) {
                                     return Mycircle(
-                                      child: topics[index],
+                                      child: [
+                                        topics[index], 
+                                        image_topic_map[topics[index]]
+                                      ]
                                     );
                                     
                                   })),

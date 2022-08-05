@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class Mycircle extends StatelessWidget {
-final String child;
+final List<dynamic> child;
 
 Mycircle({this.child});
 
@@ -16,9 +16,25 @@ Mycircle({this.child});
                                   color: Colors.black,
                                   image: DecorationImage(
                                       image: NetworkImage(
-                                          'https://arbaminch.gov.et/sites/default/files/images/office/football.jpg')),
+                                          this.child[1]
+                                          )),
                                 ),
-                                child: Text('',style: TextStyle()),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.only(top:15),
+                                      child: Text(
+                                        this.child[0],
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                      ),
+                                    ),]    
+                                )
                               ),
                             );
 
