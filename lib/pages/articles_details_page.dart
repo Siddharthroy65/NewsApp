@@ -13,6 +13,7 @@ class ArticlePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
@@ -24,7 +25,7 @@ class ArticlePage extends StatelessWidget {
     MaterialPageRoute(builder: (context) => MyApp(),),);
           },
         ),
-           backgroundColor: Color(0xFFFAFAFA),
+           backgroundColor: Colors.white,
            actions: [
              Padding(
                padding: const EdgeInsets.only(right:5.0),

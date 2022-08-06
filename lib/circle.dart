@@ -23,15 +23,12 @@ Mycircle({this.child});
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(top:15),
-                                      child: Text(
-                                        this.child[0],
-                                        style: TextStyle(
-                                          fontSize: 20,
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold
-                                        ),
+                                    Text(
+                                      this.child[0],
+                                      style: TextStyle(
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold
                                       ),
                                     ),]    
                                 )

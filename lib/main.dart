@@ -67,21 +67,15 @@ class _MyAppState extends State<MyApp> {
               theme: Style.Style.themeData(themeProvider.darkTheme),
               home: Scaffold(
                   appBar: AppBar(
+                    elevation: 0,
                     leading: IconButton(
                         onPressed: () {},
                         icon: Icon(
                           Icons.menu,
                           color: Colors.black,
                         )),
-                    backgroundColor: Color(0xFFFAFAFA),
-                    centerTitle: true,
-                    title: Text(
-                      "News Headline",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
-                    ),
+                    backgroundColor: Colors.white,
+                
                     actions: <Widget>[
                       Switch(
                           value: switchValue,
