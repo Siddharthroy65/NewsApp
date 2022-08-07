@@ -134,13 +134,11 @@ class _MyAppState extends State<MyApp> {
                                 )),
                           ),
                         ),
-                        SizedBox(
-                          height: 10,
-                        ),
+                  
                         Column(
                           children: [
                             Container(
-                              height: 120,
+                              height: 70,
                               child: ListView.builder(
                                   itemCount: topics.length,
                                   scrollDirection: Axis.horizontal,
@@ -156,14 +154,38 @@ class _MyAppState extends State<MyApp> {
                             )
                           ],
                         ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
+                         IntrinsicHeight(
+              child: Row(
+                children: [
+               
+                  Padding(
+                    padding: const EdgeInsets.only(left: 5),
+                    child: VerticalDivider(
+                      color: Colors.red,
+                      thickness: 5,
+                    ),
+                  ),
+          
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    Padding(
+                          padding: EdgeInsets.all(5.0),
                           child: Text(
                             'Breaking News',
                             style: TextStyle(
                                 fontSize: 25, fontWeight: FontWeight.bold),
                           ),
                         ),
+                    
+                    ],
+                  ),
+               
+                ],
+              ),
+              
+            ),
+                        
                         FutureBuilder(
                           future: client.getArticle(),
                           builder: (BuildContext context,

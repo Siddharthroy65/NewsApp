@@ -7,10 +7,10 @@ Mycircle({this.child});
   @override
   Widget build(BuildContext context) {
     return   Padding(
-                              padding: EdgeInsets.all(5.0),
+                              padding: EdgeInsets.all(4.0),
                               child: Container(
-                                height: 92,
-                                width: 92,
+                                height: 80,
+                                width: 80,
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: Colors.black,
@@ -20,7 +20,7 @@ Mycircle({this.child});
                                           )),
                                 ),
                                 child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
                                     Text(
