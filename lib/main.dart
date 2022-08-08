@@ -138,7 +138,7 @@ class _MyAppState extends State<MyApp> {
                         Column(
                           children: [
                             Container(
-                              height: 70,
+                              height: 150,
                               child: ListView.builder(
                                   itemCount: topics.length,
                                   scrollDirection: Axis.horizontal,
